@@ -40,7 +40,7 @@ post '/start' do
 
     # send me a text message to let me know!
     Twilio.connect(ENV['TWILIO_SID'], ENV['TWILIO_TOKEN'])
-    Twilio::Sms.message(call.caller, '2096426287', "I'm checking out your resume!")
+    Twilio::Sms.message('2094187947', '2096426287', "Someone from #{call.caller} is checking your resume!")
 
     # play the welcome message
     return Twilio::Verb.new do |v|

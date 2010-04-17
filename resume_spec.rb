@@ -23,6 +23,9 @@ describe 'The Resume app' do
   end
 
   it 'should create a new call record and send sms on new call' do
+    Twilio.should_receive(:connect)
+    Twilio::Sms.should_receive(:message)
+
     post '/start', { 'CallGuid' => 'test1', 'Caller' => '2095551234' }
 
     last_response.ok?.should be_true
