@@ -45,7 +45,7 @@ post '/start' do
     # play the welcome message
     return Twilio::Verb.new do |v|
       v.play('/welcome.mp3')
-      v.gather(:timeout => 10, :action => '/choice') {
+      v.gather(:timeout => 10, :numDigits => 1, :action => '/choice') {
         v.play('/menu.mp3')
       }
     end.response
