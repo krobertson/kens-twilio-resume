@@ -77,7 +77,7 @@ post '/choice' do
   if section_mp3
     # play the selected section
     return Twilio::Verb.new do |v|
-      v.gather(:timeout => 10, :action => '/choice') {
+      v.gather(:timeout => 1, :action => '/choice') {
         v.play(section_mp3)
       }
       v.redirect('/choice')
@@ -85,7 +85,7 @@ post '/choice' do
   else
     # give them the menu again
     return Twilio::Verb.new do |v|
-      v.gather(:timeout => 10, :action => '/choice') {
+      v.gather(:timeout => 10, :numDigits => 1, :action => '/choice') {
         v.play('/menu.mp3')
         v.redirect('/choice')
       }
