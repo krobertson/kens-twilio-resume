@@ -95,11 +95,11 @@ describe 'The Resume app' do
   end
 
   it 'should play sites.mp3 when they choose 3' do
-    test_choice(3, '/sites.mp3')
+    test_choice(3, '/projects.mp3')
   end
 
   it 'should play code.mp3 when they choose 4' do
-    test_choice(4, '/code.mp3')
+    test_choice(4, '/open_source.mp3')
   end
 
 end

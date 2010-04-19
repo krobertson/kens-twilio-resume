@@ -70,8 +70,8 @@ post '/choice' do
   section_mp3 = case params['Digits']
   when '1' then '/about.mp3'
   when '2' then '/employment.mp3'
-  when '3' then '/sites.mp3'
-  when '4' then '/code.mp3'
+  when '3' then '/projects.mp3'
+  when '4' then '/open_source.mp3'
   end
   
   if section_mp3
